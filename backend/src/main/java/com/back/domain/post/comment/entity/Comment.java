@@ -7,15 +7,25 @@ import com.back.global.exception.ServiceException;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 public class Comment extends BaseEntity {
     private String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public Member getAuthor() {
+        return author;
+    }
 
     @ManyToOne
     private Post post;
