@@ -1,14 +1,10 @@
 package com.back
 
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-@EnableJpaAuditing
-object RestApiApplication {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        SpringApplication.run(RestApiApplication::class.java, *args)
-    }
+open class RestApiApplication
+fun main (args: Array<String>){
+    runApplication<RestApiApplication>(*args)
 }
