@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component
 @Aspect
 @Component
 @RequiredArgsConstructor
-class ResponseAspect(
-    private val response: HttpServletResponse
+class ResponseAspect(private val response: HttpServletResponse
+
 ) {
 
 
@@ -46,8 +46,8 @@ class ResponseAspect(
         val rst = joinPoint.proceed() // 실제 수행 메서드
 
         println("ResponseAspec 후처리")
-        if (rst is RsData<*>) {
-            response.status=rst.statusCode
+            if (rst is RsData<*>) {
+            response.status = rst.statusCode
         }
 
         return rst

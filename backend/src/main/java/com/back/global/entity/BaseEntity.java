@@ -31,11 +31,11 @@ public abstract class BaseEntity {
         return id;
     }
 
-    public LocalDateTime getModifyDate() {
-        return modifyDate;
-    }
-
     public LocalDateTime getCreateDate() {
         return createDate;
+    }
+
+    public LocalDateTime getModifyDate() {
+        return modifyDate;
     }
 }

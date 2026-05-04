@@ -15,18 +15,6 @@ import lombok.NoArgsConstructor;
 public class Comment extends BaseEntity {
     private String content;
 
-    public String getContent() {
-        return content;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public Member getAuthor() {
-        return author;
-    }
-
     @ManyToOne
     private Post post;
 
@@ -53,5 +41,17 @@ public class Comment extends BaseEntity {
         if(!this.author.getId().equals(actor.getId())) {
             throw new ServiceException("403-2", "댓글 삭제 권한이 없습니다.");
         }
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public Member getAuthor() {
+        return author;
     }
 }

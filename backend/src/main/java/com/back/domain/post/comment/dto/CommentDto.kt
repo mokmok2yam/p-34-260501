@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 @JvmRecord
 data class CommentDto(
     val id: Int,
-    val content: String?,
+    val content: String,
     val authorId: Int,
     val authorName: String,
     val createDate: LocalDateTime,
