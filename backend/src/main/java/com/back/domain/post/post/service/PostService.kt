@@ -13,6 +13,7 @@ import java.util.*
 class PostService(
     private val postRepository: PostRepository
 ) {
+
     @Transactional
     fun write(author: Member, title: String, content: String): Post {
         val post = Post(author, title, content)
@@ -24,23 +25,24 @@ class PostService(
             update(title, content)
         }
 
-    fun deleteById(id: Int) = postRepository.deleteById(id)
 
-    //todo Optinal 제거
+    fun deleteById(id: Int) =
+        postRepository.deleteById(id)
+
+
+    //Todo Optional 제거
     fun findById(id: Int): Optional<Post> =
         postRepository.findById(id)
 
-
     fun count(): Long =
-         postRepository.count()
+        postRepository.count()
 
 
-    fun findAll(): List<Post?>
-        = postRepository.findAll()
+    fun findAll(): List<Post> =
+        postRepository.findAll()
 
-
-    fun flush()
-       =postRepository.flush()
+    fun flush() =
+        postRepository.flush()
 
 }
 

@@ -1,16 +1,16 @@
 package com.back.domain.member.controller
 
 import com.back.domain.member.dto.MemberDto
+import com.back.domain.member.entity.Member
 import com.back.domain.member.service.MemberService
 import com.back.global.exception.ServiceException
 import com.back.global.rq.Rq
 import com.back.global.rsData.RsData
-import jakarta.servlet.http.HttpServletResponse
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.Size
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.*
-import java.util.function.Supplier
 
 @RestController
 @RequestMapping("/api/v1/members")
